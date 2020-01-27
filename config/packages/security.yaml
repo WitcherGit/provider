@@ -1,0 +1,21 @@
+security:
+  encoders:
+    App\Entity\User:
+      algorithm: auto
+  providers:
+    db_provider:
+      entity:
+        class: App\Entity\User
+        property: name
+  firewalls:
+    dev:
+      pattern: ^/(_(profiler|wdt)|css|images|js)/
+      security: false
+    main:
+      anonymous: lazy
+      guard:
+        authenticators:
+          - App\Security\AuthAuthenticator
+        entry_point: App\Security\AuthAuthenticator
+      logout:
+        path: app_logout

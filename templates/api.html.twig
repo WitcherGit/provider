@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="download">Pobierz</button>
+    <table>
+        <thead>
+            <th>ID</th>
+            <th>Nazwa publikacji</th>
+            <th>Data publikacji</th>
+            <th>Autor</th>
+            <th>Punkty</th>
+            <th>Tytul</th>
+            <th>URL</th>
+        </thead>
+        <tbody id="table"></tbody>
+    </table>
+
+
+    <script>
+    window.onload = () => {
+    let table = document.querySelector("#table")
+    let download = document.querySelector("#download")
+    download.addEventListener("click", function() {
+        let xhr = new XMLHttpRequest();
+        xhr.responseType = "json";
+        xhr.addEventListener("load", function()  {
+            console.log(xhr)
+            if(xhr.status === 200) {
+                console.log(xhr.response)
+
+                for(const art of xhr.response) {
+                    table.insertRow().innerHTML = `
+                        <th>${art.id}</th>
+                        <td>${art.publication_name}</td>
+                        <td>${new Date(art.publicdate.timestamp * 1000 + art.publicdate * 60000)}</td>
+                        <td>${art.author}</td>
+                        <td>${art.points}</td>
+                        <td>${art.title}</td>
+                        <td><a href="${art.doi}">${art.doi}</a></td>
+                    `;
+                }
+            }
+        })
+        xhr.open("GET", "http://127.0.0.1/symfony-project/public/api", true)
+        xhr.send();
+    });
+    }
+    </script>
+</body>
+</html>

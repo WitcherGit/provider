@@ -1,0 +1,166 @@
+* {
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('../../img/to_do_strony.jpg');
+    background-size: cover;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+    padding: 0;
+}
+
+header {
+    padding: 20px 0px;
+    background-color: rgb(0, 26, 224,0.35);
+    border-bottom: 10px solid white;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 1.5em;
+    color: white;
+}
+
+footer {
+    padding: 10px 0px;
+    background-color: #161817;
+    color: white;
+    text-align: center;
+}
+
+.mid-column {
+    min-height: 750px;
+    background-color: rgba(0,0,0,0.4);
+    color: white;
+}
+
+.btn {
+    background-color: white;
+    border: 1px solid #282627;
+    color: black;
+    padding: 10px 30px;
+    transition: .3s;
+}
+
+.btn:hover {
+    background-color: #282627;
+    color: white;
+    border: 1px solid white;
+}
+
+.under-nav {
+    margin-top: 10px;
+    text-align: right;
+}
+
+
+/* MAIN DATABASE SEARCHER REALTIME */
+
+.dataTables_length label {
+    display: none;
+}
+
+.dataTables_filter label input {
+    width: 300px;
+}
+
+.dataTables_wrapper {
+    background-color: rgba(0,0,0, 0.2);
+    padding: 20px;
+}
+
+.main-table th, .main-table td {
+    width: calc(100% / 6);
+    padding: 5px;
+    border: 1px solid #282627;
+    background-color: white;
+    color: #262827;
+}
+
+.paging_simple_numbers {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+/*end*/
+
+.logo {
+    margin-left: 50px;
+    margin-bottom: 30px;
+}
+
+.paginate_button {
+    background-color: white !important;
+    cursor: pointer !important;
+    transition: 0.3s;
+    border: 1px solid #282627 !important;
+    font-size: 20px;
+    padding: 5px 15px!important;
+}
+
+.paginate_button:hover {
+    background-color: #282627 !important;
+    border: 1px solid white !important;
+    color: white !important;
+}
+
+.dataTables_info {
+    display: none;
+}
+
+.logged-as {
+    color: white;
+    text-align: right;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+}
+
+.logged-as p {
+    margin: 0;
+}
+
+.login-hr {
+    background-color: white;
+    height: 3px;
+}
+
+.form-login-input, .register-form input, .add-new-form input{
+    margin-top: 10px;
+    width: 100%;
+    padding: 5px;
+}
+
+.login-form, .register-form, .add-new-form {
+    width: 397px;
+    margin-left: 50px;
+    text-align: center;
+    background-color: rgba(0,0,0, 0.4);
+    padding: 20px;
+}
+
+.login-btns .btn {
+    width: 49%;
+}
+
+.add-art {
+    background-color: rgb(36, 160, 36);
+    color: white;
+}
+
+tbody, thead {
+    text-align: center;
+}
+
+#article_publicdate_month, #article_publicdate_day, #article_publicdate_year {
+    width: 33.3%;
+    margin-top: 10px;
+    padding: 7px 0px;
+}

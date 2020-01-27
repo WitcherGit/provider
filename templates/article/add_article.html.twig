@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Dodaj Artykuł
+
+	{% block stylesheets %}
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<link rel="stylesheet" href="../assets/css/style.css?sc"/>
+		<link rel="stylesheet" href="assets/css/style.css?sc"/>
+	{% endblock %}
+{% endblock %}
+
+{% block body %}
+
+{{ include('inc/under_nav_panel.html.twig') }}
+
+{{ include('inc/logo.html.twig') }}
+
+
+<div class="add-new-form">
+
+	<h1 class="login-title">Nowa publikacja</h1>
+    <hr class="login-hr">
+
+	{{ form_start(form) }}
+	{{ form_row(form.publicationName, {'attr': {'placeholder': 'Tytuł artykułu'} }) }}
+	{{ form_row(form.author, {'attr': {'placeholder': 'Autor'} }) }}
+	{{ form_row(form.publicdate) }}
+	{{ form_row(form.points, {'attr': {'placeholder': 'Liczba punktów'} }) }}
+	{{ form_row(form.title, {'attr': {'placeholder': 'Tytuł naukowy'} }) }}
+	{{ form_row(form.doi, {'attr': {'placeholder': 'DOI'} }) }}
+
+	<hr class="login-hr">
+
+	<button class="btn" type="submit">Dodaj Artykuł</button>
+	{{ form_end(form) }}
+
+
+</div>
+{% endblock %}

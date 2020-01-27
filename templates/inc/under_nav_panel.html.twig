@@ -1,0 +1,22 @@
+<div class="under-nav">
+    {% if app.user %}
+        <a href="{{ path('app_logout') }}">
+            <button class="btn">
+                Wyloguj
+            </button>
+        </a>
+    {% else %}
+        <a href="{{ path('app_register') }}">
+            <button class="btn">
+                Rejestracja
+            </button>
+        </a>
+
+        <a href="{{ path('app_login') }}">
+            <button class="btn">
+                Logowanie
+            </button>
+        </a>
+    {% endif %}
+    
+</div>

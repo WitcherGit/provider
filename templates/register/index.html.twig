@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bibliometr - rejestracja{% endblock %}
+
+{% block body %}
+
+{{ include('inc/under_nav_panel.html.twig') }}
+
+{{ include('inc/logo.html.twig') }}
+	<div class="register-form">
+
+		<h1 class="login-title">Rejestracja</h1>
+        <hr class="login-hr">
+		{{ form_start(form) }}
+
+		{{ form_row(form.name, {'attr': {'placeholder': 'Imię'} }) }}
+		{{ form_row(form.secondName, {'attr': {'placeholder': 'Nazwisko'} }) }}
+		{{ form_row(form.email, {'attr': {'placeholder': 'Email'} })  }}
+		{{ form_row(form.password.first, {'attr': {'placeholder': 'Hasło'} }) }}
+		{{ form_row(form.password.second, {'attr': {'placeholder': 'Powtórz hasło'} }) }}
+		{{ form_row(form.uczelnia, {'attr': {'placeholder': 'Uczelnia'} }) }}
+
+		<hr class="login-hr">
+		<button type="submit" class="btn">Zarejestruj się</button>
+
+		{{ form_end(form) }}
+	</div>
+{% endblock %}

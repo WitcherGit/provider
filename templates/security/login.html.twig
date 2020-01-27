@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bibliometr - logowanie{% endblock %}
+
+{% block body %}
+
+{{ include('inc/under_nav_panel.html.twig') }}
+
+{{ include('inc/logo.html.twig') }}
+
+<div class="login-form">
+    <form method="post">
+
+        <h1 class="login-title">Logowanie</h1>
+        <hr class="login-hr">
+        <input type="email" placeholder="Email" value="{{ last_username }}" name="email" id="inputName" class="form-login-input" required autofocus>
+        <input type="password" placeholder="Hasło" name="password" id="inputPassword" class="form-login-input" required>
+    
+        <input type="hidden" name="_csrf_token"
+               value="{{ csrf_token('authenticate') }}"
+        >
+    
+        <hr class="login-hr">
+        <div class="login-btns">
+
+            <button class="btn" type="submit">
+                Zaloguj się
+            </button>
+        
+        
+
+        </div>
+    </form>
+</div>
+
+{% endblock %}

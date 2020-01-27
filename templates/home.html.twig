@@ -1,0 +1,52 @@
+{% extends "base.html.twig" %}
+
+{% block title %} Symfony Bibliometr {% endblock %}
+
+{% block body %}
+
+{{ include('inc/under_nav_panel.html.twig') }}
+
+{{ include('inc/logo.html.twig') }}
+
+<table id="table_id" class="display main-table">
+
+    <thead>
+        <tr>
+			<th>Autor</th>
+			<th>Nazwa publikacji</th>
+			<th>Data Publikacji</th>
+			<th>DOI</th>
+			<th>Tytuł</th>
+			<th>Punkty</th>
+
+			{% if app.user %}
+					<th>Edytuj</th>
+					<th>Usuń</th>
+			{% endif %}
+        </tr>
+    </thead>
+    <tbody>
+		{% for article in articles %}
+		
+        <tr>
+			<td>{{ article.getAuthor() }}</td>
+			<td>{{ article.getPublicationName() }}</td>
+			<td>{{ article.getPublicdate().format("Y-m-d") }}</td>
+			<td>{{ article.getDoi() }}</td>
+			<td>{{ article.getTitle() }}</td>
+			<td>{{ article.getPoints() }}</td>
+
+			
+
+			{% if app.user %}
+					<td>{% if article.userId == app.user.id %}<a href="{{ path('app_edit_article', {'id': article.getId() }) }}">Edytuj</a>{% endif %}</td>
+					<td>{% if article.userId == app.user.id %}<a href="{{ path('app_delete_article', {'id': article.getId() }) }}">Usuń</a>{% endif %}</td>
+			{% endif %}
+        </tr>
+		{% endfor %}
+    </tbody>
+</table>
+
+{{ include('inc/db-export.html.twig') }}
+
+{% endblock %}

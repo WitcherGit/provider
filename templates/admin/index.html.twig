@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Użytkownicy
+{% endblock %}
+
+{% block body %}
+<table>
+	<tr>
+		<th>Nazwa</th>
+		<th>Email</th>
+		<th>Afiliacja</th>
+		<th>Usuń</th>
+	</tr>
+	{% for user in users %}
+	<tr>
+		<td>{{ user.getName() }}</td>
+		<td>{{ user.getEmail() }}</td>
+		<td>{{ user.getName() }}</td>
+		<td><a href="{{ path('app_delete_user', {'id': user.getId() }) }}">Usuń</a></td>
+	</tr>
+	{% endfor %}
+</table>
+{% endblock %}

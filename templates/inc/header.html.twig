@@ -1,0 +1,7 @@
+    <h1>SYSTEM BIBLIOMETRYCZNY</h1>
+
+    {% if app.user %}
+    <div class="logged-as">
+        <p >Zalogowany jako: {{ app.user.username }}</p>
+    </div>
+{% endif %}
